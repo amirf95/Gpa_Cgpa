@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA calculator</title>
+    <i class="fa-brands fa-github"></i>
+    <link rel="stylesheet" href="background/AmbientCanvasBackgrounds-master/AmbientCanvasBackgrounds-master/css/base.css">
+    <link rel="stylesheet" href="background/AmbientCanvasBackgrounds-master/AmbientCanvasBackgrounds-master/css/demo2.css">
+    <script src="background/AmbientCanvasBackgrounds-master/AmbientCanvasBackgrounds-master/js/noise.min.js"></script>
+    <script src="background/AmbientCanvasBackgrounds-master/AmbientCanvasBackgrounds-master/js/util.js"></script>
+    <script src="background/AmbientCanvasBackgrounds-master/AmbientCanvasBackgrounds-master/js/swirl.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="content--canvas"></div>
+    <h1 class="neonText">GPA & CGPA Calculator</h1>
+        <div class="checkbox_container">
+               
+            <input type="checkbox" class="theme-checkbox">
+             <span class="switch-label label-left"><h2 class="neonText1">GPA Calculator</h2></span>
+            <span class="switch-label label-right"><h2 class="neonText2">CGPA Calculator</h2></span>
+        </div>
+        <div class="gpa-section" id="gpa-section">
+        <div class="container">
+            
+        <form id="gpa-form">
+            <label for ="Course_Count">How many courses you have this semester ? </label>
+            <div class="radio-group">
+            <input type="radio" name="Course_Count" id="one" value="1" required>
+            <label for="one">1</label>
+            <input type="radio" name="Course_Count" id="two" value="2">
+            <label for="two">2</label>  
+            <input type="radio" name="Course_Count" id="three" value="3">
+            <label for="three">3</label>        
+            <input type="radio" name="Course_Count" id="four" value="4">       
+            <label for="four">4</label>
+            <input type="radio" name="Course_Count" id="five" value="5">
+            <label for="five">5</label>
+            <input type="radio" name="Course_Count" id="six" value="6">
+            <label for="six">6</label>
+            <input type="radio" name="Course_Count" id="seven" value="7">
+            <label for="seven">7</label>
+            <input type="radio" name="Course_Count" id="eight" value="8">
+            <label for="eight">8</label>
+            </div>
+            <div class="members" >
+            <table role="grid">
+                <thead>
+                    <tr>
+                    <th>Course Name</th>
+                    <th>Credits</th>
+                    <th>Letter Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="courses-body">
+                    <tr>
+                        <td><input type="text" id="course1" placeholder="Course Name" required></td>
+                        <td><input type="number" id="credit1" placeholder="Course credit" required></td>
+                        <td>
+                            <select class="sgrade">
+                                <option value="-" class="title">Select your grade</option>
+                                <option value="AA">AA</option>
+                                <option value="BA">BA</option>
+                                <option value="BB">BB</option>
+                                <option value="CB">CB</option>
+                                <option value="CC">CC</option>
+                                <option value="DC">DC</option>
+                                <option value="DD">DD</option>
+                                <option value="FF">FF</option>
+                                <option value="NA">NA</option>
+                            </select></td>
+
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <button type="submit">Calculate GPA</button>
+             <div id="gpa-result">
+            <h2>Your GPA is : <span id="gpa"></span></h2>
+        </div>
+        </form>
+       
+    </div>
+    </div>
+
+    <div class="cgpa-section" id="cgpa-section" style="display: none;">
+        <div class="container">
+            <form id="cgpa-form">
+            <label for="smesters">Enter number of semesters :</label>
+            <div class="radio-group">
+            <input type="radio" name="number_of_semesters" id="sem1" value="1">
+            <label for="sem1">1</label>
+            <input type="radio" name="number_of_semesters" id="sem2" value="2">
+            <label for="sem2">2</label>
+            <input type="radio" name="number_of_semesters" id="sem3" value="3">
+            <label for="sem3">3</label>
+            <input type="radio" name="number_of_semesters" id="sem4" value="4">
+            <label for="sem4">4</label>
+            <input type="radio" name="number_of_semesters" id="sem5" value="5">
+            <label for="sem5">5</label>
+            <input type="radio" name="number_of_semesters" id="sem6" value="6">
+            <label for="sem6">6</label>
+            <input type="radio" name="number_of_semesters" id="sem7" value="7">
+            <label for="sem7">7</label>
+            <input type="radio" name="number_of_semesters" id="sem8" value="8">
+            <label for="sem8">8</label>
+            </div>
+            <div class="members">
+            <table role="grid">
+                <thead>
+                    <tr>
+                    <th>Semester</th>
+                    <th>Total Credits</th>
+                    <th>GPA</th>
+
+                    </tr>
+                </thead>
+                <tbody id="cgpa-body">
+                    <tr>
+                        <td><input type="number" id="semesters" placeholder="Semester number" optional></td>
+                        <td><input type="number" class="cgpa-gpa" name="GPA1" placeholder="GPA 1" required></td>
+                        <td><input type="number" name="credits1" class="cgpa-credits" placeholder="Total credits" required></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <button type="submit">Calculate CGPA</button>
+
+            <div id="cgpa-result">
+                <h2>Your CGPA is : <span id="cgpa"></span></h2>
+            </div>
+
+            </form>
+            
+        </div>
+    </div>
+    <div class="footer">
+        <p>Created by <a href="amirfenina03@gmail.com">Amir Fenina</a></p>
+</body>
+
+</html>
