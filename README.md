@@ -103,6 +103,8 @@ Make sure `book.mdb` has **read/write permissions** for the IIS user:
 ---
 
 ## 📸 Screenshots
+![image](https://github.com/user-attachments/assets/941b41e1-c2c5-4e65-828f-33704753dc41)
+![image](https://github.com/user-attachments/assets/35a30275-132d-48c0-93bb-2bb17ecddc3b)
 
 > *(Include screenshots of GPA and CGPA forms, results, and background visuals here)*
 
